@@ -1,0 +1,2 @@
+total_transactions,total_spend,distinct_vendors,missing_field_rows,duplicate_ids,orphan_vendor_rows,reconciliation_breaks,duplicate_payment_candidates,benford_mad,benford_conformity
+10150,12959051.69,275,130,0,79,6,290,0.00271,close
