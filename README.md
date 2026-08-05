@@ -1,4 +1,4 @@
-# Deloitte UK Audit Analytics Portfolio: Ledger Data Quality
+# UK Audit Analytics Portfolio: Ledger Data Quality
 
 An independent audit-analytics portfolio project modelled on the questions that matter in a UK audit: can the financial data be relied upon, do key controls appear to operate, does the ledger reconcile, and where should the audit team focus further work? It turns mixed accounts-payable exports into a traceable SQLite ledger, control-test results, exception populations, and Power BI-ready files.
 
