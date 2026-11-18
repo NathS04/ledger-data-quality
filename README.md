@@ -2,7 +2,7 @@
 
 > A personal portfolio project using 10,150 synthetic transactions to demonstrate financial-data ingestion, validation, reconciliation and exception reporting. Python and pandas standardise CSV and Excel exports into SQLite; control checks and screening rules produce inspectable CSV outputs.
 
-[Portfolio — Future](https://nathaniel-sebastian-portfolio.nathannn-s04.chatgpt.site/) · [About Nathaniel Sebastian](https://github.com/NathS04)
+[Portfolio — Future](https://future-nathaniel.pages.dev/) · [About Nathaniel Sebastian](https://github.com/NathS04)
 
 
 `Python` · `SQL` · `SQLite` · `pandas` · `Reconciliation` · `Benford Screening` · `Data Controls` · `Power BI Ready`
