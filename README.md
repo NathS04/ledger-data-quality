@@ -1,14 +1,16 @@
-# Ledger Data Quality — Python + SQL Reconciliation & Analytics Pipeline
+# Ledger Data Quality — Python and SQL Pipeline
 
-> **Audit/data-quality pipeline turning mixed financial exports into a controlled, traceable ledger and exception workflow.** The project regenerates **10,150 synthetic transactions**, standardises them into SQLite, runs completeness/uniqueness/referential-integrity controls, screens duplicate-payment candidates and Benford distributions, reconciles GL totals to independent controls using a **£0.01 tolerance**, and produces KPI and exception outputs for analysis.
+> A personal portfolio project using 10,150 synthetic transactions to demonstrate financial-data ingestion, validation, reconciliation and exception reporting. Python and pandas standardise CSV and Excel exports into SQLite; control checks and screening rules produce inspectable CSV outputs.
+
+[Portfolio — Future](https://nathaniel-sebastian-portfolio.nathannn-s04.chatgpt.site/) · [About Nathaniel Sebastian](https://github.com/NathS04)
+
 
 `Python` · `SQL` · `SQLite` · `pandas` · `Reconciliation` · `Benford Screening` · `Data Controls` · `Power BI Ready`
 
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-blue.svg)](https://python.org)
 [![CI](https://github.com/NathS04/ledger-data-quality/actions/workflows/ci.yml/badge.svg)](https://github.com/NathS04/ledger-data-quality/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> **Disclaimer:** This project processes **synthetic financial data** with injected defects for portfolio and analytical demonstration purposes. It is not a Deloitte or client engagement. Benford's Law and duplicate checks serve as analytical **screening tools** to prioritize human investigation, not direct proof of fraud.
+> **Scope:** All financial data and findings are synthetic. This is not a client engagement. Duplicate matches and Benford distributions are screening signals for investigation, not proof of fraud.
 
 ---
 
@@ -16,12 +18,12 @@
 
 | Dimension | Details |
 | :--- | :--- |
-| **Input Data** | Disjoint CSV, Excel, and legacy financial exports (10,150 synthetic transactions with realistic data defects). |
+| **Input Data** | Generated CSV and Excel exports: 10,150 synthetic transactions with deliberately injected defects. |
 | **Pipeline Architecture** | Python ingestion → standardisation & cleansing → SQLite database → data quality & control testing → anomaly detection → exception reporting. |
 | **Data Controls** | Completeness (>95% threshold), uniqueness (transaction ID deduplication), referential integrity (vendor master reconciliation). |
 | **Reconciliation** | Period ledger balance check reconciled against independent control totals within a strict **£0.01 tolerance**. |
-| **Analytics & Screening** | Duplicate-payment candidate detection (vendor + amount + 3-day window) & Benford's Law leading-digit chi-square screening. |
-| **Reporting Outputs** | Structured exception CSVs, executive KPI metrics, Benford frequency breakdown, and Power BI-ready data models. |
+| **Analytics & Screening** | Duplicate-payment candidates using repeated vendor ID, invoice number and amount; Benford leading-digit chi-square screening. |
+| **Reporting Outputs** | Exception CSVs, KPI metrics, reconciliation detail and Benford frequencies. A guide explains how to build a Power BI dashboard from these outputs. |
 
 ---
 
@@ -110,7 +112,7 @@ python -m src.run_pipeline --no-regen
 
 ## Power BI Desktop Integration
 
-[`outputs/DASHBOARD.md`](outputs/DASHBOARD.md) contains the step-by-step Power BI Desktop build instructions. This repository includes the reproducible source CSVs for reporting. Connect Power BI Desktop to `outputs/kpis.csv`, `outputs/exceptions_report.csv`, and `outputs/benford.csv` or directly to `data/processed/ledger.db`.
+[`outputs/DASHBOARD.md`](outputs/DASHBOARD.md) contains the step-by-step Power BI Desktop build instructions. This repository includes reproducible source CSVs and dashboard build instructions; it does not include a completed `.pbix` dashboard. Connect Power BI Desktop to `outputs/kpis.csv`, `outputs/exceptions_report.csv`, and `outputs/benford.csv` or directly to `data/processed/ledger.db`.
 
 ---
 
@@ -125,7 +127,7 @@ python -m src.run_pipeline --no-regen
 
 ## Related Portfolio Work
 
-- [Policy Copilot](https://github.com/NathS04/policy_copilot_submission) — Audit-Ready RAG with Citation Enforcement & Evaluation Harness
-- [EventHub](https://github.com/NathS04/comp3011-cw1-api) — Production-Style FastAPI Event API with 24 REST Endpoints & Provenance Tracking
+- [Policy Copilot](https://github.com/NathS04/policy_copilot_submission) — Academic policy-question-answering prototype with evidence checks and evaluation
+- [EventHub](https://github.com/NathS04/comp3011-cw1-api) — Academic FastAPI event and RSVP API with authentication and provenance
 - [Search Engine Tool](https://github.com/NathS04/comp3011-cw2-api) — Web Crawler, Positional Inverted Index & TF-IDF Ranking Engine
 
